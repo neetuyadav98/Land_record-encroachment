@@ -14,7 +14,7 @@
 
 **Keywords:** explainable GeoAI · cadastral parcels · land-use discrepancy · multi-temporal Earth observation · change detection · human-in-the-loop verification · Aravalli Range
 
-> **Important:** This system is built as **decision support**. It never declares a parcel illegal. It only tells a human officer which parcels are worth a visit, and why.
+> **Important:** This study is built as **decision support**. It never declares a parcel illegal. It only tells a human officer which parcels are worth a visit, and why.
 
 ---
 
