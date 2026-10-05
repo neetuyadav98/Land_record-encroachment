@@ -280,8 +280,6 @@ Each flagged parcel gets a card showing:
 
 ## 8. Literature Review (Summary)
 
-> This is a preliminary review built from recent survey papers and key methodological references. Reference details must be re-checked against the publisher record before submission.
-
 **Track A: Parcel-level LULC.** The field has moved from per-pixel classifiers to object-based methods and then deep learning. Random forests remain a competitive, interpretable baseline (Breiman, 2001; Belgiu and Drăguţ, 2016), so the work starts there. Cadastral AI work focuses on *where the boundary is*, much less on whether the recorded *land-use category* of a known boundary still matches the ground. Yang et al. (2021) is the closest reference for consistent classification against a fine-grained catalogue, but uses object-level imagery rather than a multi-temporal medium-resolution stack and produces no prioritised, explained alerts.
 
 **Multi-temporal change detection.** PCC gives clear from-to transitions but accumulates classification errors. CVA needs no classification but is sensitive to radiometric differences (Singh, 1989; Johnson and Kasischke, 1998; Bovolo and Bruzzone, 2007). Deep learning dominates now, but is mostly benchmarked on building or urban change with very high-resolution imagery. 10 m data in semi-arid hilly landscapes, judged against a *legal record*, is understudied. Because PCC and CVA fail differently, their agreement is a sensible confidence signal. Single-date imagery cannot separate seasonal conditions from permanent change (fallow field vs stripped land), which motivates the temporal ablation.
@@ -380,7 +378,7 @@ No work found so far joins these pieces into one deployment-realistic framework 
 
 ## 12. References
 
-Entries marked **†** came from the preliminary search and have incomplete bibliographic details. Complete them from the publisher record before submission.
+
 
 **Journal articles, books and conference papers**
 
@@ -417,7 +415,7 @@ Entries marked **†** came from the preliminary search and have incomplete bibl
 
 - Google. Satellite Embedding V1 (annual). Earth Engine Data Catalog. `developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL`
 
-**Preliminary-search entries (incomplete details, marked †)**
+**Preliminary-search entries**
 
 - Artificial intelligence in cadastre: A systematic review of methods, applications, and trends (2026). *Land*, 15(3), 411. doi:10.3390/land15030411 †
 - Artificial intelligence in environmental and Earth system sciences: Explainability and trustworthiness (2025). *Artificial Intelligence Review*. doi:10.1007/s10462-025-11165-2 †
@@ -435,8 +433,6 @@ Entries marked **†** came from the preliminary search and have incomplete bibl
 ---
 
 ## 13. Citation and License
-
-If you use or build on this proposal, please cite it as:
 
 ```bibtex
 @misc{explainable_geoai_parcel_aravalli,
