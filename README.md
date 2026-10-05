@@ -6,7 +6,7 @@
 ![Domain](https://img.shields.io/badge/domain-GeoAI%20%7C%20Remote%20Sensing%20%7C%20Cadastre-green)
 ![Study area](https://img.shields.io/badge/study%20area-Aravalli%20Range-orange)
 ![Data](https://img.shields.io/badge/data-Sentinel--1%20%7C%20Sentinel--2%20%7C%20Landsat%20%7C%20DEM-lightgrey)
-![Tools](https://img.shields.io/badge/tools-Google%20Earth%20Engine%20%7C%20Python%20%7C%2ArcPro-yellow)
+![Tools](https://img.shields.io/badge/tools-Google%20Earth%20Engine%20%7C%20Python%20%7C%20ArcPro-yellow)
 
 > Land records say what a parcel is *supposed* to be. Satellites show what is *actually* happening on it. This project is about the gap between the two.
 
