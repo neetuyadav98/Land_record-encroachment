@@ -112,17 +112,17 @@ Current practice and current research face these problems:
 
 ### Core objectives
 
-| # | Objective | What it delivers |
-|---|-----------|------------------|
-| **O1** | Build an integrated parcel-level geospatial database by linking cadastral records with multi-temporal Earth observation data | Spatial, spectral, temporal, topographic and contextual information per parcel (Sentinel-1, Sentinel-2, Landsat, DEM), with historical land-use records linked to remotely observed land use. This is the foundation for everything else. |
-| **O2** | Build a multi-temporal GeoAI framework for parcel-level land-use classification and transition detection | Detects changes in vegetation, built-up, bare land, water, mining and other classes. Compares ML and DL approaches. Includes a **temporal ablation** (which time periods actually help?) and a **transferability test** (does it work in other parts of the study area?). |
-| **O3** | Build a **Parcel-Level Land-Use Discrepancy Index (PLDI)** | Quantifies the difference between recorded and observed land use using three components: Land-Use Consistency, Change Confidence and Discrepancy Risk. A screening index, not a legal classification. |
-| **O4** | Build an explainable GeoAI layer | Shows which spatial, spectral, temporal, topographic and contextual factors drove each flag. Output is a simple **parcel evidence card**: recorded vs observed use, nature and timing of change, key factors, model confidence, supporting imagery. |
-| **O5** | Build and validate a human-in-the-loop decision-support framework | A **Verification Priority Score (VPS)** built from discrepancy magnitude, model confidence, persistence of change, environmental sensitivity and spatial context. Field feedback is used to evaluate and improve the model. Validated against independent reference data and, where possible, field observations. |
+| # | Objective 
+|---|-----------
+| **O1** | 	Develop an integrated parcel-level geospatial framework for linking cadastral information with multi-temporal Earth observation data. 
+| **O2** |	Investigate how multi-temporal and multi-sensor Earth observation data can characterize parcel-level land-use/land-cover states and detect persistent transitions. 
+| **O3** | Develop an uncertainty-aware framework for quantifying discrepancies between recorded cadastral states and EO-observed parcel states.
+| **O4** |	Develop and evaluate explainable GeoAI methods for providing faithful, stable and spatially meaningful evidence for parcel-level discrepancy predictions.
+| **O5** | Investigate how GeoAI uncertainty, discrepancy evidence and human verification feedback can be used to prioritize limited field-verification resources.
 
 ### Exploratory objective
 
-**E1:** Compare pretrained geospatial foundation embeddings with conventional Earth observation features for parcel-level land-use characterisation.
+**E1:**	Evaluate whether pretrained geospatial foundation-model representations provide additional information for parcel-level discrepancy characterization beyond conventional spectral, temporal and contextual features.
 
 The question is not just "do embeddings improve accuracy?". It is also *where* they add information, *where* conventional features (spectral, temporal, textural, terrain) do just as well, and *under what conditions* their advantage disappears. Same splits, same models, same metrics.
 
