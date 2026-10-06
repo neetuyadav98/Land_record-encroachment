@@ -281,7 +281,7 @@ The framework takes two kinds of input: cadastral parcels with their recorded la
 | Dynamic World, ESA WorldCover | Context and weak labels at 10 m (class definitions do not map cleanly to cadastral categories) |
 | AlphaEarth / Satellite Embedding V1 (annual, 10 m, 64-D) and TESSERA (10 m, 128 bands) | Exploratory embedding benchmark only |
 
-**Platform:** Google Earth Engine for regional-scale stacks, Python for modelling, QGIS for parcel QA and mapping.
+**Platform:** Google Earth Engine for regional-scale stacks, Python for modelling, ArcGIS Pro for parcel QA and mapping.
 
 ---
 
