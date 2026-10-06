@@ -239,7 +239,7 @@ The framework takes two kinds of input: cadastral parcels with their recorded la
 
 > **Feedback loop:** each reviewer decision from field and reference validation goes back into the database as new labelled data.
 
-[**▶ Open the interactive walkthrough**](https://YOUR-USERNAME.github.io/YOUR-REPO/)
+
 
 
 ## 5. The Four Parcel-Level Scores
