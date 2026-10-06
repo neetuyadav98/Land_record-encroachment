@@ -232,21 +232,9 @@ flowchart TD
 | **Discrepancy Risk Score** | How much does this discrepancy matter in context? | Slope, proximity to leases and protected zones, neighbourhood change |
 | **Verification Priority Score (VPS)** | Which parcels should an officer visit first? | Discrepancy magnitude, model confidence, persistence of change, environmental sensitivity, spatial context |
 
-The first three combine into the **PLDI**. Weight sensitivity analysis is part of the plan, so the final ranking does not depend on one arbitrary choice of weights. The VPS is evaluated with **Precision@k**, because the real question is "of the top k parcels an officer visits, how many were worth visiting?".
-
-### Parcel evidence card (output for non-technical officers)
-
-Each flagged parcel gets a card showing:
-
-- recorded land use vs observed land use
-- type and timing of detected change
-- top contributing factors (grouped as spectral / temporal / topographic / contextual)
-- model confidence
-- the actual imagery and dates, so the officer can verify the claim by eye
-
 ---
 
-## 6. Research Phases (5-Year Plan)
+## 6. Research Phases
 
 | Phase | Focus | Notes |
 |-------|-------|-------|
