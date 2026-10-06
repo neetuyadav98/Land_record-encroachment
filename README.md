@@ -222,6 +222,54 @@ flowchart TD
 ```
 
 ---
+## Framework timeline
+
+```mermaid
+timeline
+    title Explainable GeoAI for parcel-level land-use verification
+    section Data and modelling
+        1 · Data acquisition : Cadastral parcels : Sentinel-1 and Sentinel-2 : Landsat and DEM
+        2 · Parcel database : Zonal features per parcel : Parcel-ID linkage : Parcel size vs pixel size check
+        3 · Land-use classification : RF and XGBoost baseline : LSTM and Transformer : Temporal ablation
+        4 · Change detection : Post-classification comparison : Change vector analysis : Agreement gives confidence
+    section Novel contribution
+        5 · Parcel scoring : Land-Use Consistency : Change Confidence : Discrepancy Risk : Verification Priority Score
+        6 · Explainable GeoAI : SHAP : Grad-CAM and attention : Parcel evidence cards
+    section Human in the loop
+        7 · Officer verification : Ranked visit list : Confirm, dismiss or query
+        8 · Field validation : Precision at k : Feedback to database
+```
+
+> Decision support only. The system never declares a parcel illegal.
+
+---
+
+## Same flow as an image (optional)
+
+If you prefer the infographic style, put `geoai_framework_timeline.svg` in `docs/` and add:
+
+```markdown
+![Framework timeline](docs/geoai_framework_timeline.svg)
+```
+
+---
+
+## Plain table fallback
+
+Agar preview mein Mermaid timeline na dikhe, yeh table hamesha kaam karta hai.
+
+| # | Stage | Key inputs / methods | Output |
+|---|---|---|---|
+| 1 | Data acquisition | Cadastral parcels, Sentinel-1/2, Landsat, DEM | Raw multi-temporal stack |
+| 2 | Parcel database | Zonal statistics, parcel-ID linkage | Integrated parcel-level database |
+| 3 | Land-use classification | RF / XGBoost vs LSTM / Transformer, temporal ablation | Observed land use per parcel |
+| 4 | Change detection | PCC + CVA | Transitions with confidence |
+| 5 | Parcel scoring | Consistency, Change Confidence, Discrepancy Risk, VPS | PLDI and priority ranking |
+| 6 | Explainable GeoAI | SHAP, Grad-CAM, attention | Parcel evidence cards |
+| 7 | Officer verification | Ranked list, confirm / dismiss / query | Verified flags |
+| 8 | Field validation | Precision@k, error analysis | Validated results and feedback |
+
+---
 
 ## 5. The Four Parcel-Level Scores
 
