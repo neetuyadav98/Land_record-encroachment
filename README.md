@@ -176,52 +176,143 @@ flowchart TD
     subgraph EX["EXPLORATORY - Foundation embeddings vs conventional features"]
         X1["Pretrained embeddings<br/>(AlphaEarth, TESSERA)"]
         X2["Conventional EO features"]
-        X3["Matched comparison<br/>same splits, models, metrics"]
-        X4["Finding: where embeddings add value"]
-    end
+        X3["Matched com## 4. Proposed Framework
 
-    subgraph S3["STAGE 3 - Objective 3: PLDI"]
-        D1["Land-Use Consistency<br/>recorded vs observed<br/>(class-compatibility matrix)"]
-        D2["Change Confidence<br/>probability, persistence, uncertainty"]
-        D3["Discrepancy Risk<br/>slope, lease / protected-zone proximity,<br/>neighbourhood change"]
-        D4(["OUTPUT 3: PLDI<br/>screening index, weight sensitivity analysis"])
-    end
+The framework checks recorded land use against what satellites observe in the Aravalli study area, then hands the most doubtful parcels to a human reviewer. **Click any stage below to expand its steps.**
 
-    subgraph S4["STAGE 4 - Objective 4: Explainable GeoAI"]
-        E1["Feature attribution (SHAP)<br/>grouped by spectral / temporal /<br/>topographic / contextual"]
-        E2["Global and local analysis"]
-        E3["Explanation reliability<br/>stability across models and seeds,<br/>expert plausibility check"]
-        E4(["OUTPUT 4<br/>Parcel evidence card"])
-    end
+```mermaid
+flowchart TD
+    IN["<b>INPUTS</b><br/>Cadastral records · Sentinel-2 · Sentinel-1<br/>Landsat archive · DEM and context"]
+    S1["<b>Stage 1</b><br/>Parcel-level database"]
+    S2["<b>Stage 2</b><br/>Classification and transitions"]
+    EX["<b>Exploratory</b><br/>Foundation embeddings vs<br/>conventional features"]
+    S3["<b>Stage 3</b><br/>PLDI screening index"]
+    S4["<b>Stage 4</b><br/>Explainable GeoAI"]
+    S5["<b>Stage 5</b><br/>Human-in-the-loop prioritisation"]
 
-    subgraph S5["STAGE 5 - Objective 5: Human-in-the-loop prioritisation"]
-        F1["Verification Priority Score"]
-        F2["Expert review<br/>ranked parcel list"]
-        F3["Field and reference validation"]
-        F4["Performance assessment<br/>Precision@k, ranking quality,<br/>error analysis, usability"]
-        F5(["OUTPUT 5<br/>Verification Priority and HITL System"])
-    end
+    IN --> S1 -->|"Output 1: database"| S2
+    EX -.informs.-> S2
+    S2 -->|"Output 2: validated model"| S3
+    S3 -->|"Output 3: PLDI"| S4
+    S4 -->|"Output 4: evidence card"| S5
+    S5 -.->|"Feedback: reviewer decisions become labelled data"| S1
 
-    IN --> S1
-    B1 --> B2 --> B3 --> B4 --> B5
-    S1 --> S2
-    C1 --> C2 --> C3 --> C4 --> C5
-    X1 --> X3
-    X2 --> X3
-    X3 --> X4
-    X4 -.informs.-> S2
-    S2 --> S3
-    D1 --> D4
-    D2 --> D4
-    D3 --> D4
-    S3 --> S4
-    E1 --> E2 --> E3 --> E4
-    S4 --> S5
-    F1 --> F2 --> F3 --> F4 --> F5
-    F3 -. feedback: labelled data .-> S1
+    classDef inp fill:#e8eee7,stroke:#12302b,color:#12302b
+    classDef c1 fill:#2b7a9b,stroke:#1d5770,color:#fff
+    classDef c2 fill:#3f8f4f,stroke:#2c6537,color:#fff
+    classDef c3 fill:#b7791f,stroke:#85570f,color:#fff
+    classDef c4 fill:#6b5b95,stroke:#4b3f6e,color:#fff
+    classDef c5 fill:#c4492f,stroke:#8f3320,color:#fff
+    classDef ex fill:#f6f9f5,stroke:#7a8a84,stroke-dasharray:5 4,color:#12302b
+    class IN inp
+    class S1 c1
+    class S2 c2
+    class S3 c3
+    class S4 c4
+    class S5 c5
+    class EX ex
 ```
 
----
+### Inputs
+
+<details>
+<summary><b>Inputs (Aravalli study area)</b></summary>
+
+| Input | What it contributes |
+|---|---|
+| Cadastral records | Parcel polygons, recorded land use, lease and mutation records |
+| Sentinel-2 | Multi-date optical composites, spectral indices |
+| Sentinel-1 | SAR VV/VH backscatter, temporal statistics |
+| Landsat archive | Long-term land-use history |
+| DEM and context | Slope, elevation, roads, settlements, protected zones |
+
+</details>
+
+### Stages
+
+<details>
+<summary>🟦 <b>Stage 1 · Objective 1:</b> Build the parcel-level database</summary>
+
+| Step | Operations |
+|---|---|
+| Pre-processing | Cloud/shadow masking, speckle filtering, harmonisation, co-registration (GEE) |
+| Parcel geometry QA | Geo-referencing, topology repair, CRS harmonisation |
+| Parcel-level features | Zonal statistics: spectral, temporal, textural, topographic, contextual |
+| Record-observation linkage | Parcel-ID join, temporal alignment |
+
+**Output 1:** Integrated Parcel-Level Geospatial Database
+
+</details>
+
+<details>
+<summary>🟩 <b>Stage 2 · Objective 2:</b> Classify land use and detect transitions</summary>
+
+| Step | Operations |
+|---|---|
+| Reference data | Stratified samples, independent test set |
+| Model development | RF / XGBoost vs LSTM / Transformer |
+| Ablation and transferability | Temporal ablation, spatial block CV, leave-one-sub-region-out |
+| Transition detection | Type, timing, persistence (from-to) |
+
+**Output 2:** Validated classification and change-detection model
+
+</details>
+
+<details>
+<summary>⬜ <b>Exploratory branch:</b> Do foundation embeddings help?</summary>
+
+| Step | Operations |
+|---|---|
+| Pretrained embeddings | AlphaEarth, TESSERA |
+| Conventional EO features | Baseline feature set |
+| Matched comparison | Same splits, models, metrics |
+| Finding | Where embeddings add value (informs Stage 2) |
+
+</details>
+
+<details>
+<summary>🟧 <b>Stage 3 · Objective 3:</b> Score each parcel with the PLDI</summary>
+
+| Component | Description |
+|---|---|
+| Land-Use Consistency | Recorded vs observed (class-compatibility matrix) |
+| Change Confidence | Probability, persistence, uncertainty |
+| Discrepancy Risk | Slope, lease / protected-zone proximity, neighbourhood change |
+
+**Output 3:** PLDI screening index, with weight sensitivity analysis
+
+</details>
+
+<details>
+<summary>🟪 <b>Stage 4 · Objective 4:</b> Explain every flagged parcel</summary>
+
+| Component | Description |
+|---|---|
+| Feature attribution (SHAP) | Grouped by spectral / temporal / topographic / contextual |
+| Global and local analysis | Model-wide drivers and parcel-level reasons |
+| Explanation reliability | Stability across models and seeds, expert plausibility check |
+
+**Output 4:** Parcel evidence card
+
+</details>
+
+<details>
+<summary>🟥 <b>Stage 5 · Objective 5:</b> Put humans in the loop</summary>
+
+| Step | Description |
+|---|---|
+| Verification Priority Score | Orders parcels for review |
+| Expert review | Ranked parcel list |
+| Field and reference validation | Confirms or rejects each alert |
+| Performance assessment | Precision@k, ranking quality, error analysis, usability |
+
+**Output 5:** Verification Priority and HITL System
+
+</details>
+
+> **Feedback loop:** each reviewer decision from field and reference validation goes back into the database as new labelled data.
+
+[**▶ Open the interactive walkthrough**](https://YOUR-USERNAME.github.io/YOUR-REPO/)
 
 
 ## 5. The Four Parcel-Level Scores
