@@ -224,24 +224,6 @@ flowchart TD
 ---
 
 
-
-## Plain table fallback
-
-Agar preview mein Mermaid timeline na dikhe, yeh table hamesha kaam karta hai.
-
-| # | Stage | Key inputs / methods | Output |
-|---|---|---|---|
-| 1 | Data acquisition | Cadastral parcels, Sentinel-1/2, Landsat, DEM | Raw multi-temporal stack |
-| 2 | Parcel database | Zonal statistics, parcel-ID linkage | Integrated parcel-level database |
-| 3 | Land-use classification | RF / XGBoost vs LSTM / Transformer, temporal ablation | Observed land use per parcel |
-| 4 | Change detection | PCC + CVA | Transitions with confidence |
-| 5 | Parcel scoring | Consistency, Change Confidence, Discrepancy Risk, VPS | PLDI and priority ranking |
-| 6 | Explainable GeoAI | SHAP, Grad-CAM, attention | Parcel evidence cards |
-| 7 | Officer verification | Ranked list, confirm / dismiss / query | Verified flags |
-| 8 | Field validation | Precision@k, error analysis | Validated results and feedback |
-
----
-
 ## 5. The Four Parcel-Level Scores
 
 | Score | What it answers | Built from |
