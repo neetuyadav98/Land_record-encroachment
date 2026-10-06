@@ -1,4 +1,4 @@
-# Explainable GeoAI for Parcel-Level Land-Use Verification
+ # Explainable GeoAI for Parcel-Level Land-Use Verification
 
 ### Integrating multi-temporal Earth observation and cadastral data to detect land-use discrepancies in the Aravalli Range
 
