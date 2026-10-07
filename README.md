@@ -311,7 +311,7 @@ The framework takes two kinds of input: cadastral parcels with their recorded la
 | Use of time series | Many claims that multi-temporal input helps | Rarely tested against matched single-date model at parcel level | Temporal ablation study |
 | Explainability | SHAP, Grad-CAM, attention; XAI-in-EO reviews | Explanations built for researchers; faithfulness concerns | Faithfulness tests + officer-oriented evidence cards |
 | Cadastre + EO | Illegal building detection against cadastral maps | Buildings/footprints, VHR or UAV, urban | Land-use category discrepancy with 10 m multi-temporal data in mixed rural/mining/urban terrain |
-| Prioritisation | Active learning in remote sensing | Not framed around limited inspection capacity | Verification Priority Score, evaluated with Precision@k |
+| Prioritisation | Active learning in remote sensing | Not framed around limited inspection capacity | Verification Priority Score|
 | Generalisation | Domain adaptation research | Rarely tested within one mountain range | Bounded transferability test on a reserved contrast area |
 | Foundation embeddings | AlphaEarth, TESSERA and others | Annual, hard to interpret, untested for parcel discrepancy | Exploratory benchmark against conventional features |
 
@@ -422,20 +422,6 @@ No work found so far joins these pieces into one deployment-realistic framework 
 
 - Google. Satellite Embedding V1 (annual). Earth Engine Data Catalog. `developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL`
 
-**Preliminary-search entries**
-
-- Artificial intelligence in cadastre: A systematic review of methods, applications, and trends (2026). *Land*, 15(3), 411. doi:10.3390/land15030411 †
-- Artificial intelligence in environmental and Earth system sciences: Explainability and trustworthiness (2025). *Artificial Intelligence Review*. doi:10.1007/s10462-025-11165-2 †
-- Assessment of land-use dynamics of the Aravalli range (India) using integrated geospatial and CART approach (2022). *Earth Science Informatics*. doi:10.1007/s12145-021-00753-9 †
-- Change detection in remote sensing imagery: A systematic review of statistical, machine learning, and deep learning methods (2026). *Remote Sensing*, 18(15), 2573. doi:10.3390/rs18152573 †
-- Deep learning for change detection in remote sensing: A review (2022). *Geo-spatial Information Science*. doi:10.1080/10095020.2022.2085633 †
-- Example-based explainable AI and its application for remote sensing image classification (2023). arXiv:2302.01526. †
-- Exploring the potential of AlphaEarth and TESSERA embeddings for fine-scale local climate zone mapping: A case study across five cities in Switzerland (2026). arXiv:2606.20034. †
-- Earth embeddings as products: Taxonomy, ecosystem, and standardized access (2026). arXiv:2601.13134. †
-- Land use and land cover classification meets deep learning: A review (2023). *Sensors*, 23(21), 8966. doi:10.3390/s23218966 †
-- Machine and deep learning for Sentinel-based land use and land cover change detection: A systematic review and future outlook (2026). *Environmental Monitoring and Assessment*. doi:10.1007/s10661-026-15558-w †
-- Spatiotemporal study of land degradation impacting the oldest mountains of the Indian subcontinent (2026). *Geographies*, 6(1), 29. doi:10.3390/geographies6010029 †
-- Study using the Segment Anything Model prompted with cadastral centroids to detect unauthorised buildings and cadastral discrepancies in Italian heritage settlements (2025). *ISPRS Archives*, XLVIII-M-9-2025, 1349. † *(full title and authors to be added)*
 
 ---
 
