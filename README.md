@@ -25,14 +25,13 @@
 - [3. Objectives and Deliverables](#3-objectives-and-deliverables)
 - [4. Proposed Framework](#4-proposed-framework)
 - [5. The Four Parcel-Level Scores](#5-the-four-parcel-level-scores)
-- [6. Research Phases ](#6-research-phases-5-year-plan)
-- [7. Data Sources](#7-data-sources)
-- [8. Literature Review (Summary)](#8-literature-review-summary)
-- [9. Research Gap](#9-research-gap)
-- [10. Planned Repository Structure](#10-planned-repository-structure)
-- [11. Limitations and Responsible Use](#11-limitations-and-responsible-use)
-- [12. References](#12-references)
-- [13. Citation and License](#13-citation-and-license)
+- [6. Data Sources](#7-data-sources)
+- [7. Literature Review (Summary)](#8-literature-review-summary)
+- [8. Research Gap](#9-research-gap)
+- [9. Planned Repository Structure](#10-planned-repository-structure)
+- [10. Limitations and Responsible Use](#11-limitations-and-responsible-use)
+- [11. References](#12-references)
+- [12. Citation and License](#13-citation-and-license)
 
 ---
 
@@ -250,20 +249,6 @@ The framework takes two kinds of input: cadastral parcels with their recorded la
 
 ---
 
-## 6. Research Phases
-
-| Phase | Focus | Notes |
-|-------|-------|-------|
-| **1** | Literature and data feasibility | Three review tracks: (A) parcel-level LULC, (B) XAI in remote sensing, (C) cadastre + EO integration. Every paper logged with method, dataset, reported accuracy and gap. Also tests the claim that no existing framework combines all components. |
-| **2** | Parcel-level geospatial database | Parcel QA, feature extraction, record-observation linkage. Includes explicit quantification of **parcel size vs 10 m pixel size** and per-size-class analysis rules. |
-| **3** | Baseline classification and change detection | RF / XGBoost baseline vs deep temporal models. **Temporal ablation** against a matched single-date model. **Transferability test** on a reserved contrast area. |
-| **4** | Explainability layer | SHAP, Grad-CAM / attention. Faithfulness and stability checks, not blind trust. Evidence cards. |
-| **5** | Verification workflow with feedback | VPS, reviewer confirm / dismiss / query actions, feedback into training data. Explicitly handles **sampling bias** (officers only see the top of the ranking). |
-| **6** | Field validation | Independent reference data (e.g. high-resolution imagery) and field checks. Precision@k, error analysis, usability. |
-
-*Exploratory track (E1)* runs alongside Phases 3 and 4 and is not on the critical path.
-
----
 
 ## 7. Data Sources
 
@@ -275,7 +260,6 @@ The framework takes two kinds of input: cadastral parcels with their recorded la
 | Landsat archive | Long-term land-use history |
 | DEM | Slope, elevation, terrain |
 | Context layers | Roads, settlements, lease areas, protected zones |
-| Dynamic World, ESA WorldCover | Context and weak labels at 10 m (class definitions do not map cleanly to cadastral categories) |
 | AlphaEarth / Satellite Embedding V1 (annual, 10 m, 64-D) and TESSERA (10 m, 128 bands) | Exploratory embedding benchmark only |
 
 **Platform:** Google Earth Engine for regional-scale stacks, Python for modelling, ArcGIS Pro for parcel QA and mapping.
