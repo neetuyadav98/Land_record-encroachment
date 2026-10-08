@@ -18,7 +18,7 @@
 
 ## Table of Contents
 
-- [In short](#In short)
+- [In short](#Inshort)
 - [Abstract](#abstract)
 - [1. Introduction](#1-introduction)
 - [2. Problem Statement](#2-problem-statement)
