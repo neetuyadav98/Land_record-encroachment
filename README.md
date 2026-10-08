@@ -282,20 +282,6 @@ The framework takes two kinds of input: cadastral parcels with their recorded la
 
 **Decision support and human-in-the-loop.** Active learning (Tuia et al., 2009) picks the most informative samples for humans to label. Here the logic runs in reverse: pick parcels where a human visit is most valuable, then learn from the answer. Domain adaptation (Tuia et al., 2016) frames the transferability question. Accuracy assessment follows Olofsson et al. (2014). Direct literature on feedback loops between enforcement staff and land-monitoring models is thin, so it is treated as an open design problem.
 
-### Synthesis: what exists, what is missing, how this research responds
-
-| Theme | What the literature offers | Limitation for this problem | Response in this research |
-|-------|---------------------------|----------------------------|---------------------------|
-| Land-use classification | Mature ML/DL; RF as interpretable baseline; Sentinel + GEE workflows | Mostly pixel/image level; class schemes differ from cadastral categories | Parcel-level classification with documented crosswalk from recorded to observable classes |
-| Parcel size vs pixel size | VHR solutions for boundary work | Rarely quantified for 10 m data | Explicit quantification and per-size-class analysis rules (Phase 2) |
-| Change detection | PCC, CVA, many DL architectures | Each fails differently; benchmarks mostly urban and VHR | Two independent methods; agreement feeds Change Confidence Score |
-| Use of time series | Many claims that multi-temporal input helps | Rarely tested against matched single-date model at parcel level | Temporal ablation study |
-| Explainability | SHAP, Grad-CAM, attention; XAI-in-EO reviews | Explanations built for researchers; faithfulness concerns | Faithfulness tests + officer-oriented evidence cards |
-| Cadastre + EO | Illegal building detection against cadastral maps | Buildings/footprints, VHR or UAV, urban | Land-use category discrepancy with 10 m multi-temporal data in mixed rural/mining/urban terrain |
-| Prioritisation | Active learning in remote sensing | Not framed around limited inspection capacity | Verification Priority Score|
-| Generalisation | Domain adaptation research | Rarely tested within one mountain range | Bounded transferability test on a reserved contrast area |
-| Foundation embeddings | AlphaEarth, TESSERA and others | Annual, hard to interpret, untested for parcel discrepancy | Exploratory benchmark against conventional features |
-
 ---
 
 ## 9. Research Gap
