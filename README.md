@@ -62,8 +62,7 @@ The Aravalli Range is the case study because mining, urban expansion, agricultur
 
 ## 1. Introduction
 
-### 1.1 Background and motivation
-
+### 1.1 Background 
 Good land governance depends on records that match reality. A revenue department that knows which parcels are farmland, which are forest, which are permitted for construction and which are leased for mining can plan, tax, protect and enforce. When the record and the ground disagree, everything downstream becomes harder. Land-use change, unauthorised development, encroachment, mining expansion and the conversion of environmentally sensitive land are all, at their core, cases where **the ground has moved and the record has not**.
 
 Most monitoring today still relies on field inspections, periodic surveys and complaints. These are slow, expensive and hard to scale across large, uneven landscapes. Satellite data can watch every parcel at regular intervals for free, and machine learning can read it faster than any team of people. But most published remote sensing work stops at land-cover maps or change maps. A change map says *that* something changed at a location. It does not say:
