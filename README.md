@@ -229,7 +229,7 @@ The framework takes two kinds of input: cadastral parcels with their recorded la
 | Verification Priority Score | Orders parcels for review |
 | Expert review | Ranked parcel list |
 | Field and reference validation | Confirms or rejects each alert |
-| Performance assessment | Precision@k, ranking quality, error analysis, usability |
+| Performance assessment | ranking quality, error analysis, usability |
 
 **Output 5:** Verification Priority and HITL System
 
