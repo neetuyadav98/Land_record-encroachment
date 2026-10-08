@@ -18,7 +18,7 @@
 
 ## Table of Contents
 
-- [In short](#tldr)
+- [In short](#In short)
 - [Abstract](#abstract)
 - [1. Introduction](#1-introduction)
 - [2. Problem Statement](#2-problem-statement)
@@ -36,7 +36,7 @@
 
 ---
 
-## TL;DR
+## In short
 
 | | |
 |---|---|
